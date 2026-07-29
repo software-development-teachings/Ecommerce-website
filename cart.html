@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart — MORPHEUS</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       GLOBAL NAVIGATION HEADER
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        MORPHEUS<span>.</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Shop Catalog</a></li>
+          <li><a href="index.html#narrative" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn active" aria-label="Shopping Cart">
+          <span>🛒 Cart</span>
+          <span id="cart-badge" class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <div class="cart-header">
+      <span class="badge">Your Capsule</span>
+      <h1>Shopping Bag</h1>
+    </div>
+
+    <!-- Main Cart Interface (Layout with items + summary sidebar) -->
+    <div id="cart-content" class="cart-layout">
+      <!-- Items Table List -->
+      <div class="cart-items-column">
+        <div id="cart-items-list" class="cart-items-list">
+          <!-- Injected dynamically via js/cart.js -->
+        </div>
+
+        <div class="cart-actions-bar">
+          <a href="catalog.html" class="btn btn-outline">← Continue Shopping</a>
+          <button id="clear-cart-btn" class="btn btn-outline danger-btn">Clear Cart</button>
+        </div>
+      </div>
+
+      <!-- Order Summary Sidebar -->
+      <aside class="cart-summary-column">
+        <div class="summary-card">
+          <h3>Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summary-subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Shipping</span>
+            <span id="summary-shipping">Calculated at Checkout</span>
+          </div>
+
+          <div class="summary-row promo-row">
+            <span>Discount (DREAM10)</span>
+            <span id="summary-discount">-$0.00</span>
+          </div>
+
+          <!-- Promo Input Code -->
+          <div class="promo-box">
+            <input type="text" id="promo-input" placeholder="Promo Code (e.g. DREAM10)" />
+            <button id="apply-promo-btn" class="btn btn-outline">Apply</button>
+          </div>
+          <p id="promo-message" class="promo-msg hidden"></p>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="summary-total">$0.00</span>
+          </div>
+
+          <a href="checkout.html" id="checkout-btn" class="btn btn-primary btn-large btn-full">
+            Proceed to Checkout
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Empty Cart Fallback State -->
+    <div id="cart-empty" class="empty-state hidden">
+      <div class="empty-icon">🛍️</div>
+      <h3>Your Bag is Empty</h3>
+      <p>Explore our latest capsule collection to add items to your cart.</p>
+      <a href="catalog.html" class="btn btn-primary" style="margin-top: 1.5rem;">Explore Garments</a>
+    </div>
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 0.5rem;">MORPHEUS<span>.</span></div>
+        <p>Surrealist clothing designed for modern expression.</p>
+      </div>
+      <div>
+        <p>© 2026 MORPHEUS Studios. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript Modules -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
