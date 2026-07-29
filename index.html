@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MORPHEUS — Surrealist Luxury Garments</title>
+  
+  <!-- Core Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. GLOBAL NAVIGATION HEADER
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        MORPHEUS<span>.</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Shop Catalog</a></li>
+          <li><a href="#narrative" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <span>🛒 Cart</span>
+          <span id="cart-badge" class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         2. HERO SECTION
+         ==================================================================== -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="badge">Collection 01 — Dreamworld</span>
+        <h1 class="hero-title">Wear the Subconscious.</h1>
+        <p class="hero-subtitle">
+          High-density heavyweight knits, brushed mohair silhouettes, and structured outerwear tailored for fluid reality.
+        </p>
+        <div class="hero-actions">
+          <a href="catalog.html" class="btn btn-primary">Explore Collection</a>
+          <a href="#narrative" class="btn btn-outline">The Narrative</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. BRAND NARRATIVE SECTION
+         ==================================================================== -->
+    <section id="narrative" class="narrative-section">
+      <div class="container narrative-grid">
+        <div class="narrative-text">
+          <span class="badge">The Ethos</span>
+          <h2>Crafted in the Space Between Waking & Sleep</h2>
+          <p>
+            Morpheus was founded on a singular premise: streetwear should not merely exist as passive apparel—it should evoke emotional weight.
+          </p>
+          <p>
+            Every piece in our debut capsule utilizes bespoke fabric weights, custom-dyed yarns, and surrealist structural cuts engineered to blur the line between luxury tailoring and effortless comfort.
+          </p>
+        </div>
+        <div class="narrative-stats">
+          <div class="stat-card">
+            <h3>520 GSM</h3>
+            <p>French Terry Cotton</p>
+          </div>
+          <div class="stat-card">
+            <h3>30%</h3>
+            <p>Superkid Mohair</p>
+          </div>
+          <div class="stat-card">
+            <h3>100%</h3>
+            <p>Custom Milled Yarns</p>
+          </div>
+          <div class="stat-card">
+            <h3>1/100</h3>
+            <p>Numbered Drops</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. FEATURED DROPS GRID
+         ==================================================================== -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="badge">Featured Drops</span>
+            <h2>Curated Capsule Highlights</h2>
+          </div>
+          <a href="catalog.html" class="view-all-link">View Full Catalog →</a>
+        </div>
+
+        <div id="featured-grid" class="product-grid">
+          <!-- Dynamically populated via js/products.js & inline homepage renderer -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       5. GLOBAL FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 0.5rem;">MORPHEUS<span>.</span></div>
+        <p>Surrealist clothing designed for modern expression.</p>
+      </div>
+      <div>
+        <p>© 2026 MORPHEUS Studios. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript Modules -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Homepage Inline Execution Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const featuredGrid = document.getElementById('featured-grid');
+      if (!featuredGrid) return;
+
+      // Filter products marked as isFeatured in products.js
+      const featuredProducts = PRODUCTS.filter(p => p.isFeatured);
+
+      featuredGrid.innerHTML = featuredProducts.map(product => `
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <span class="card-badge">${product.badge}</span>
+            <img src="${product.images[0]}" alt="${product.name}" loading="lazy" />
+            <a href="product.html?id=${product.id}" class="card-quick-view">Inspect Piece</a>
+          </div>
+          <div class="card-body">
+            <div class="card-category">${product.category}</div>
+            <h3 class="card-title">
+              <a href="product.html?id=${product.id}">${product.name}</a>
+            </h3>
+            <div class="card-footer">
+              <span class="card-price">$${product.price}</span>
+              <span class="card-rating">★ ${product.rating}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
