@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garment Details — MORPHEUS</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       GLOBAL NAVIGATION HEADER
+       ====================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        MORPHEUS<span>.</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="catalog.html" class="nav-link">Shop Catalog</a></li>
+          <li><a href="index.html#narrative" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <span>🛒 Cart</span>
+          <span id="cart-badge" class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container pdp-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a> / 
+      <a href="catalog.html">Catalog</a> / 
+      <span id="breadcrumb-title">Garment</span>
+    </nav>
+
+    <!-- Product Details Grid -->
+    <div id="product-detail-layout" class="pdp-layout">
+      <!-- Dynamically injected via js/product-detail.js -->
+    </div>
+
+    <!-- Fallback state if ID is invalid or missing -->
+    <div id="pdp-not-found" class="empty-state hidden">
+      <div class="empty-icon">🌑</div>
+      <h3>Garment Not Found</h3>
+      <p>The piece you are looking for does not exist or has been retired from the capsule.</p>
+      <a href="catalog.html" class="btn btn-primary" style="margin-top: 1rem;">Back to Catalog</a>
+    </div>
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <div class="brand-logo" style="margin-bottom: 0.5rem;">MORPHEUS<span>.</span></div>
+        <p>Surrealist clothing designed for modern expression.</p>
+      </div>
+      <div>
+        <p>© 2026 MORPHEUS Studios. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript Modules -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

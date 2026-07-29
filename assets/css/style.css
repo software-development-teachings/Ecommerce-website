@@ -635,3 +635,220 @@ a {
 .empty-state p {
   color: var(--text-secondary);
 }
+
+
+/* ==========================================================================
+   5. PRODUCT DETAILS PAGE (PDP) STYLES
+   ========================================================================== */
+
+.pdp-container {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+}
+
+.breadcrumb a:hover {
+  color: var(--text-primary);
+}
+
+.pdp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Gallery Frame */
+.pdp-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.main-image-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.main-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.thumb-btn {
+  width: 80px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.thumb-btn.active,
+.thumb-btn:hover {
+  border-color: var(--accent-gold);
+}
+
+.thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Info Panel */
+.pdp-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem;
+  line-height: 1.15;
+}
+
+.pdp-price-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pdp-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.pdp-rating {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pdp-description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* Spec Box */
+.spec-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.spec-box h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.spec-box ul {
+  list-style: none;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.spec-box li {
+  margin-bottom: 0.4rem;
+}
+
+/* Size Picker */
+.size-section {
+  margin-bottom: 2rem;
+}
+
+.size-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.size-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.size-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.size-btn:hover {
+  border-color: var(--text-muted);
+}
+
+.size-btn.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* PDP Actions */
+.pdp-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-large {
+  flex: 1;
+  padding: 1.1rem;
+  font-size: 1rem;
+}
+
+/* Feedback Banner Toast */
+.toast-banner {
+  background-color: rgba(99, 102, 241, 0.15);
+  border: 1px solid var(--accent-indigo);
+  color: var(--text-primary);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive PDP Breakpoint */
+@media (max-width: 850px) {
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
